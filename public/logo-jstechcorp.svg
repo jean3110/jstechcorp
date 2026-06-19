@@ -1,22 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" width="160" height="48" role="img" aria-label="JS Tech Corp">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 22" width="170" height="22" role="img" aria-label="JS Tech Corp">
 
-  <!-- < JS /> -->
-  <text x="0" y="24"
-    font-family="Space Grotesk, Inter, sans-serif"
-    font-size="22" font-weight="700" fill="#4A6CF7">&lt;</text>
+  <!-- Blue dot -->
+  <circle cx="6" cy="11" r="5" fill="#4A6CF7"/>
 
-  <text x="22" y="24"
+  <!-- Wordmark -->
+  <text
+    x="18" y="16"
     font-family="Space Grotesk, Inter, sans-serif"
-    font-size="22" font-weight="700" fill="#FFFFFF">JS</text>
-
-  <text x="60" y="24"
-    font-family="Space Grotesk, Inter, sans-serif"
-    font-size="22" font-weight="700" fill="#8B5CF6">/&gt;</text>
-
-  <!-- TECH CORP -->
-  <text x="1" y="40"
-    font-family="Space Grotesk, Inter, sans-serif"
-    font-size="9" font-weight="600" fill="#9CA3AF"
-    letter-spacing="3">TECH CORP</text>
+    font-size="16"
+    font-weight="500"
+    fill="#FFFFFF"
+    letter-spacing="-0.2"
+  >JS Tech Corp</text>
 
 </svg>
