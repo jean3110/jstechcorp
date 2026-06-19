@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Check, Bot, Star, Globe, Zap, Shield } from "lucide-react";
+import Image from "next/image";
 
 type Lang = "en" | "pt";
 
@@ -191,8 +192,8 @@ export default function Home() {
       {/* NAVBAR */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-800/60 bg-black/90 backdrop-blur-md">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 h-16">
-          <a href="/" className="text-white font-extrabold text-lg tracking-tight">
-            JS <span className="bg-gradient-to-r from-[#0055d1] to-[#0DC0DF] bg-clip-text text-transparent">Tech Corp</span>
+          <a href="/">
+            <Image src="/logo-principal.svg" alt="JS Tech Corp" width={160} height={40} className="h-9 w-auto" />
           </a>
           <div className="hidden md:flex items-center gap-7 text-sm font-medium text-gray-400">
             <a href="#services" className="hover:text-white transition-colors">{c.nav.services}</a>
@@ -405,10 +406,8 @@ export default function Home() {
       <footer className="border-t border-gray-800 bg-black px-5 py-10">
         <div className="mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <p className="text-white font-extrabold text-lg tracking-tight">
-              JS <span className="bg-gradient-to-r from-[#0055d1] to-[#0DC0DF] bg-clip-text text-transparent">Tech Corp</span>
-            </p>
-            <p className="text-xs text-gray-500 mt-1">{c.footer.tagline}</p>
+            <Image src="/logo-principal.svg" alt="JS Tech Corp" width={160} height={40} className="h-9 w-auto mb-1" />
+            <p className="text-xs text-gray-500">{c.footer.tagline}</p>
           </div>
           <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm text-gray-500 hover:text-white transition-colors">{CONTACT_EMAIL}</a>
         </div>

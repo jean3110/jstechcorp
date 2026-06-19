@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0055D1"/>
+      <stop offset="100%" stop-color="#0DC0DF"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0055D1"/>
+      <stop offset="100%" stop-color="#0DC0DF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon: rounded square with gradient -->
+  <rect x="0" y="0" width="80" height="80" rx="18" fill="url(#grad)"/>
+
+  <!-- JS letters in white -->
+  <text x="40" y="53" font-family="Arial Black, Arial, sans-serif" font-size="36" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-1">JS</text>
+
+  <!-- Company name: TECH -->
+  <text x="100" y="44" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="white" letter-spacing="1">TECH</text>
+
+  <!-- Company name: CORP in gradient -->
+  <text x="101" y="66" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="url(#grad2)" letter-spacing="5">CORP</text>
+</svg>
