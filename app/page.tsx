@@ -6,7 +6,12 @@ import { Check, Bot, Star, Globe, Zap, Shield, ArrowRight, Sparkles } from "luci
 type Lang = "en" | "pt";
 
 const CONTACT_EMAIL = "contact@jstechcorp.com";
-const CONTACT_WA = "https://wa.me/19785028075";
+const WA_BASE = "https://wa.me/19785028075";
+const WA_MSG = {
+  en: "Hi! I'm interested in JS Tech Corp's AI systems for my business.",
+  pt: "Olá! Tenho interesse nos sistemas de IA da JS Tech Corp para o meu negócio.",
+};
+const contactWA = (lang: Lang) => `${WA_BASE}?text=${encodeURIComponent(WA_MSG[lang])}`;
 
 const t = {
   en: {
@@ -229,7 +234,7 @@ export default function Home() {
               className="text-xs font-bold border border-white/10 rounded-full px-3 py-1.5 text-gray-400 hover:text-white hover:border-white/20 transition-all bg-white/[0.03]">
               {lang === "en" ? "🇧🇷 PT" : "🇺🇸 EN"}
             </button>
-            <a href={CONTACT_WA} target="_blank" rel="noopener noreferrer"
+            <a href={contactWA(lang)} target="_blank" rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-2 text-white font-semibold text-sm hover:opacity-90 transition-all shadow-[0_0_20px_rgba(99,102,241,0.3)]">
               {c.nav.cta}
             </a>
@@ -266,7 +271,7 @@ export default function Home() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 mt-2">
-            <GradientBtn label={c.hero.cta} href={CONTACT_WA} />
+            <GradientBtn label={c.hero.cta} href={contactWA(lang)} />
             <GradientBtn label={c.hero.secondary} href="#services" secondary />
           </div>
 
@@ -475,7 +480,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-xl text-center">
           <h2 className="text-3xl sm:text-5xl font-black mb-4 leading-tight">{c.cta.title}</h2>
           <p className="text-gray-400 mb-8 leading-relaxed">{c.cta.body}</p>
-          <GradientBtn label={c.cta.btn} href={CONTACT_WA} className="mb-5" />
+          <GradientBtn label={c.cta.btn} href={contactWA(lang)} className="mb-5" />
           <p className="text-sm text-gray-500 mt-4">
             {c.cta.email_label}{" "}
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-indigo-400 hover:text-indigo-300 transition-colors">{CONTACT_EMAIL}</a>
