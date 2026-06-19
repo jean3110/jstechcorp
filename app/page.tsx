@@ -44,7 +44,7 @@ const t = {
           features: ["Custom design aligned to your brand", "Services, pricing & FAQ sections", "Before & after photo gallery", "Hosted and maintained for you"],
         },
         {
-          icon: Bot, number: "02", badge: "Most Popular",
+          icon: Bot, number: "02",
           title: "AI Booking Agent",
           body: "An AI that lives on your site, answers every question, and books appointments day and night — no human needed.",
           features: ["Instant replies, every hour of the day", "Collects name, date, time, address & phone", "Instant email alert for every booking", "Daily 8AM digest of pending appointments"],
@@ -132,7 +132,7 @@ const t = {
           features: ["Design personalizado com sua identidade", "Seções de serviços, preços e perguntas frequentes", "Galeria de fotos antes e depois", "Hospedado e mantido por nós"],
         },
         {
-          icon: Bot, number: "02", badge: "Mais Popular",
+          icon: Bot, number: "02",
           title: "Agente de IA para Agendamento",
           body: "Uma IA que vive no seu site, responde toda pergunta e agenda atendimentos de dia ou de noite — sem precisar de ninguém.",
           features: ["Respostas instantâneas a qualquer hora", "Coleta nome, data, horário, endereço e telefone", "Alerta por email a cada agendamento", "Resumo diário às 8h com pendências"],
