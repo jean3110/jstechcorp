@@ -6,7 +6,7 @@ import { Check, Bot, Star, Globe, Zap, Shield, ArrowRight, Sparkles } from "luci
 type Lang = "en" | "pt";
 
 const CONTACT_EMAIL = "contact@jstechcorp.com";
-const CONTACT_WA = "https://wa.me/15085804043";
+const CONTACT_WA = "https://wa.me/19785028075";
 
 const t = {
   en: {
