@@ -1,32 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="220" height="48" role="img" aria-label="JS Tech Corp">
-  <defs>
-    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4A6CF7"/>
-      <stop offset="100%" style="stop-color:#8B5CF6"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" width="160" height="48" role="img" aria-label="JS Tech Corp">
 
-  <!-- Rounded square icon -->
-  <rect x="0" y="4" width="40" height="40" rx="10" ry="10" fill="url(#iconGrad)"/>
-
-  <!-- "JS" text inside icon -->
-  <text
-    x="20" y="30"
+  <!-- < JS /> -->
+  <text x="0" y="24"
     font-family="Space Grotesk, Inter, sans-serif"
-    font-size="16"
-    font-weight="700"
-    fill="#FFFFFF"
-    text-anchor="middle"
-    letter-spacing="-0.3"
-  >JS</text>
+    font-size="22" font-weight="700" fill="#4A6CF7">&lt;</text>
 
-  <!-- "Tech Corp" wordmark -->
-  <text
-    x="52" y="30"
+  <text x="22" y="24"
     font-family="Space Grotesk, Inter, sans-serif"
-    font-size="18"
-    font-weight="500"
-    fill="#FFFFFF"
-    letter-spacing="-0.2"
-  >Tech Corp</text>
+    font-size="22" font-weight="700" fill="#FFFFFF">JS</text>
+
+  <text x="60" y="24"
+    font-family="Space Grotesk, Inter, sans-serif"
+    font-size="22" font-weight="700" fill="#8B5CF6">/&gt;</text>
+
+  <!-- TECH CORP -->
+  <text x="1" y="40"
+    font-family="Space Grotesk, Inter, sans-serif"
+    font-size="9" font-weight="600" fill="#9CA3AF"
+    letter-spacing="3">TECH CORP</text>
+
 </svg>

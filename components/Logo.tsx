@@ -3,58 +3,43 @@ interface LogoProps {
 }
 
 const config = {
-  sm: { box: 28, radius: 7,  js: 11, name: 13, gap: 8,  weight: 500 },
-  md: { box: 36, radius: 9,  js: 14, name: 15, gap: 10, weight: 500 },
-  lg: { box: 48, radius: 12, js: 18, name: 20, gap: 12, weight: 500 },
+  sm: { tag: 13, js: 13, sub: 7.5, gap: 2, jsMargin: 3 },
+  md: { tag: 17, js: 17, sub: 9,   gap: 3, jsMargin: 4 },
+  lg: { tag: 23, js: 23, sub: 11,  gap: 4, jsMargin: 5 },
 };
 
 export default function Logo({ size = "md" }: LogoProps) {
   const c = config[size];
+  const font = "var(--font-space-grotesk, sans-serif)";
 
   return (
-    <div className="flex items-center" style={{ gap: c.gap }}>
-      {/* Rounded square icon with gradient */}
-      <div
-        style={{
-          width: c.box,
-          height: c.box,
-          borderRadius: c.radius,
-          background: "linear-gradient(135deg, #4A6CF7 0%, #8B5CF6 100%)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexShrink: 0,
-        }}
-      >
-        <span
-          style={{
-            color: "#fff",
-            fontFamily: "var(--font-space-grotesk, sans-serif)",
-            fontSize: c.js,
-            fontWeight: 700,
-            letterSpacing: "-0.02em",
-            lineHeight: 1,
-            userSelect: "none",
-          }}
-        >
+    <div style={{ display: "flex", flexDirection: "column", gap: c.gap, userSelect: "none" }}>
+
+      {/* < JS /> */}
+      <div style={{ display: "flex", alignItems: "baseline", lineHeight: 1 }}>
+        <span style={{ fontFamily: font, fontSize: c.tag, fontWeight: 700, color: "#4A6CF7" }}>
+          &lt;
+        </span>
+        <span style={{ fontFamily: font, fontSize: c.js, fontWeight: 700, color: "#FFFFFF", margin: `0 ${c.jsMargin}px` }}>
           JS
+        </span>
+        <span style={{ fontFamily: font, fontSize: c.tag, fontWeight: 700, color: "#8B5CF6" }}>
+          /&gt;
         </span>
       </div>
 
-      {/* Wordmark */}
-      <span
-        style={{
-          color: "#fff",
-          fontFamily: "var(--font-space-grotesk, sans-serif)",
-          fontSize: c.name,
-          fontWeight: c.weight,
-          letterSpacing: "-0.01em",
-          lineHeight: 1,
-          userSelect: "none",
-        }}
-      >
-        Tech Corp
-      </span>
+      {/* TECH CORP */}
+      <div style={{
+        fontFamily: font,
+        fontSize: c.sub,
+        fontWeight: 600,
+        color: "#9CA3AF",
+        letterSpacing: "0.2em",
+        lineHeight: 1,
+      }}>
+        TECH CORP
+      </div>
+
     </div>
   );
 }
