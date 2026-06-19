@@ -318,22 +318,11 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-3">
             {c.pillars.items.map((item, i) => {
               const Icon = item.icon;
-              const isPopular = "badge" in item && item.badge;
               return (
-                <div key={i} className={`relative rounded-2xl p-7 flex flex-col gap-5 transition-all duration-300 group cursor-default
-                  ${isPopular
-                    ? "border border-indigo-500/50 bg-gradient-to-b from-indigo-500/10 to-violet-500/5 shadow-[0_0_40px_rgba(99,102,241,0.15)] hover:shadow-[0_0_60px_rgba(99,102,241,0.25)]"
-                    : "border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm hover:border-indigo-500/30 hover:bg-white/[0.05]"
-                  }`}>
-                  {isPopular && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-black uppercase tracking-widest bg-gradient-to-r from-indigo-500 to-violet-500 text-white px-4 py-1 rounded-full whitespace-nowrap">
-                      {item.badge}
-                    </span>
-                  )}
-
+                <div key={i} className="relative rounded-2xl p-7 flex flex-col gap-5 border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm hover:border-indigo-500/30 hover:bg-white/[0.05] transition-all duration-300 group cursor-default">
                   <div className="flex items-center gap-3">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${isPopular ? "bg-indigo-500/20 border border-indigo-500/30" : "bg-white/[0.05] border border-white/[0.08]"}`}>
-                      <Icon className={`w-5 h-5 ${isPopular ? "text-indigo-300" : "text-gray-400 group-hover:text-indigo-400 transition-colors"}`} />
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-white/[0.05] border border-white/[0.08]">
+                      <Icon className="w-5 h-5 text-gray-400 group-hover:text-indigo-400 transition-colors" />
                     </div>
                     <span className="text-3xl font-black text-white/10">{item.number}</span>
                   </div>
