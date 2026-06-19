@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import ChatWidget from "./ChatWidget";
 
 const inter = Inter({ subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  weight: ["400", "500", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "JS Tech Corp — AI Systems for Local Businesses",
@@ -24,7 +29,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${inter.className} min-h-full bg-black text-white antialiased`}>
+      <body className={`${inter.className} ${spaceGrotesk.variable} min-h-full bg-black text-white antialiased`}>
         {children}
         <ChatWidget />
       </body>
