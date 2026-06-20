@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${inter.className} ${spaceGrotesk.variable} min-h-full bg-black text-white antialiased`}>
+      <body className={`${inter.className} ${spaceGrotesk.variable} min-h-full antialiased`}>
         {children}
         <ChatWidget />
       </body>
