@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, FormEvent } from "react";
-import { MessageCircle, X, Send, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send } from "lucide-react";
 
 interface Message {
   role: "user" | "assistant";
@@ -11,12 +11,12 @@ interface Message {
 function TypingIndicator() {
   return (
     <div className="flex items-start gap-2">
-      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shrink-0 text-white text-[9px] font-black">JS</div>
-      <div className="bg-white/[0.07] border border-white/[0.06] rounded-2xl rounded-tl-sm px-3 py-2.5">
+      <div className="w-7 h-7 rounded-full bg-[#4A6CF7] flex items-center justify-center shrink-0 text-white text-[9px] font-bold">JS</div>
+      <div className="bg-gray-100 border border-gray-200 rounded-2xl rounded-tl-sm px-3 py-2.5">
         <div className="flex gap-1 items-center h-4">
-          <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce [animation-delay:-0.3s]" />
-          <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce [animation-delay:-0.15s]" />
-          <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#4A6CF7] animate-bounce [animation-delay:-0.3s]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#4A6CF7] animate-bounce [animation-delay:-0.15s]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#4A6CF7] animate-bounce" />
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@ function MessageBubble({ message }: { message: Message }) {
   if (message.role === "user") {
     return (
       <div className="flex justify-end">
-        <div className="bg-gradient-to-r from-indigo-500 to-violet-500 text-white rounded-2xl rounded-tr-sm px-3.5 py-2.5 max-w-[80%]">
+        <div className="bg-[#4A6CF7] text-white rounded-2xl rounded-tr-sm px-3.5 py-2.5 max-w-[80%]">
           <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
         </div>
       </div>
@@ -35,8 +35,8 @@ function MessageBubble({ message }: { message: Message }) {
   }
   return (
     <div className="flex items-start gap-2">
-      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shrink-0 text-white text-[9px] font-black">JS</div>
-      <div className="bg-white/[0.07] border border-white/[0.06] text-gray-100 rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[80%]">
+      <div className="w-7 h-7 rounded-full bg-[#4A6CF7] flex items-center justify-center shrink-0 text-white text-[9px] font-bold">JS</div>
+      <div className="bg-gray-100 border border-gray-200 text-gray-800 rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[80%]">
         <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
       </div>
     </div>
@@ -109,27 +109,27 @@ export default function ChatWidget() {
   return (
     <>
       {open && (
-        <div className="fixed bottom-20 right-5 z-[999] w-[340px] sm:w-[380px] h-[520px] bg-[#07102A] border border-white/[0.1] rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden">
+        <div className="fixed bottom-20 right-5 z-[999] w-[340px] sm:w-[380px] h-[520px] bg-white border border-gray-200 rounded-2xl shadow-xl flex flex-col overflow-hidden">
           {/* Header */}
-          <div className="bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-3 flex items-center gap-3 shrink-0">
-            <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-black shrink-0">JS</div>
+          <div className="bg-[#4A6CF7] px-4 py-3 flex items-center gap-3 shrink-0">
+            <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold shrink-0">JS</div>
             <div className="flex-1">
               <div className="flex items-center gap-2">
                 <span className="text-white font-semibold text-sm">JS Tech Corp</span>
-                <span className="flex items-center gap-1 text-xs text-emerald-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-pulse" />
+                <span className="flex items-center gap-1 text-xs text-emerald-200">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 inline-block animate-pulse" />
                   Online
                 </span>
               </div>
               <p className="text-xs text-white/70">AI Sales Assistant</p>
             </div>
-            <button onClick={() => setOpen(false)} className="text-white/60 hover:text-white transition-colors" aria-label="Close chat">
+            <button onClick={() => setOpen(false)} className="text-white/70 hover:text-white transition-colors" aria-label="Close chat">
               <X size={18} />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-3 py-4 flex flex-col gap-3">
+          <div className="flex-1 overflow-y-auto px-3 py-4 flex flex-col gap-3 bg-gray-50">
             {messages.map((msg, idx) => (
               <MessageBubble key={idx} message={msg} />
             ))}
@@ -138,7 +138,7 @@ export default function ChatWidget() {
           </div>
 
           {/* Input */}
-          <div className="border-t border-white/[0.06] px-3 py-2.5 shrink-0">
+          <div className="border-t border-gray-100 px-3 py-2.5 shrink-0 bg-white">
             <form onSubmit={handleSubmit} className="flex items-end gap-2">
               <textarea
                 ref={textareaRef}
@@ -148,13 +148,13 @@ export default function ChatWidget() {
                 placeholder="Type your message..."
                 rows={1}
                 disabled={isLoading}
-                className="flex-1 resize-none rounded-xl border border-white/[0.08] bg-white/[0.05] px-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-transparent disabled:opacity-50 max-h-24 overflow-y-auto leading-relaxed"
+                className="flex-1 resize-none rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#4A6CF7] focus:border-transparent disabled:opacity-50 max-h-24 overflow-y-auto leading-relaxed"
                 style={{ minHeight: "38px" }}
               />
               <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="w-9 h-9 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 text-white flex items-center justify-center shrink-0 hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(99,102,241,0.4)]"
+                className="w-9 h-9 rounded-full bg-[#4A6CF7] text-white flex items-center justify-center shrink-0 hover:bg-[#3D5CDB] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                 aria-label="Send"
               >
                 <Send size={14} />
@@ -167,10 +167,10 @@ export default function ChatWidget() {
       {/* Toggle button */}
       <button
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-5 right-5 z-[999] w-14 h-14 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 text-white flex items-center justify-center shadow-[0_0_30px_rgba(99,102,241,0.5)] hover:shadow-[0_0_40px_rgba(99,102,241,0.7)] hover:scale-105 active:scale-95 transition-all duration-200"
+        className="fixed bottom-5 right-5 z-[999] w-14 h-14 rounded-full bg-[#4A6CF7] text-white flex items-center justify-center shadow-lg hover:bg-[#3D5CDB] hover:shadow-xl active:scale-95 transition-all duration-200"
         aria-label={open ? "Close chat" : "Open chat"}
       >
-        {open ? <X size={22} /> : <Sparkles size={22} />}
+        {open ? <X size={22} /> : <MessageCircle size={22} />}
       </button>
     </>
   );
