@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Check, Bot, Star, ArrowRight, Sparkles, MessageCircle, RefreshCw, FileSpreadsheet, ChevronDown, Shield } from "lucide-react";
+import { Check, Bot, Star, ArrowRight, MessageCircle, RefreshCw, FileSpreadsheet, ChevronDown, Shield } from "lucide-react";
 import Logo from "@/components/Logo";
 
 type Lang = "en" | "pt";
@@ -21,12 +21,12 @@ const t = {
       badge: "AI Automation for Local Businesses",
       h1: "Stop Losing Customers",
       h2: "to Slow Replies.",
-      sub: "We build AI systems that capture leads, book appointments, and re-engage past customers — 24/7, completely on autopilot.",
+      sub: "We build AI systems that capture leads, book appointments, and bring back past customers. They work around the clock, so you never miss another one.",
       cta1: "Get Started Today",
       cta2: "See a Live Example",
     },
     stats: [
-      { v: "40–60%", l: "of leads lost to slow replies" },
+      { v: "40-60%", l: "of leads lost to slow replies" },
       { v: "24/7", l: "AI works while you sleep" },
       { v: "$2,000+", l: "monthly cost of a receptionist" },
       { v: "30 days", l: "money-back guarantee" },
@@ -34,19 +34,19 @@ const t = {
     problem: {
       label: "The Problem",
       title: "Every Missed Message Is a Lost Customer",
-      body: "When someone reaches out and doesn't hear back in minutes, they move on to the next business on the list. You're busy doing the actual work — not watching your phone. That gap is costing you real money every single day.",
-      highlight: "A receptionist costs $2,000–$3,500/month. Our AI delivers the same result for a fraction of that.",
+      body: "When someone reaches out and doesn't hear back in minutes, they move on to the next business on the list. You're busy doing the actual work, not watching your phone. That gap costs you real money every single day.",
+      highlight: "A receptionist costs $2,000 to $3,500 a month. Our AI does the same job for a fraction of that.",
     },
     services: {
       label: "What We Build",
-      title: "Five Systems. One Goal: More Revenue.",
-      sub: "Each system is purpose-built to close a specific revenue gap in your business.",
+      title: "Five systems that turn missed messages into booked jobs.",
+      sub: "Each one closes a specific spot where you're losing business.",
       items: [
-        { icon: Bot, title: "24/7 Web Lead Capture & Scheduler", desc: "An AI assistant on your website that engages every visitor, answers questions, and books appointments day or night — no human needed.", plan: "Essential" },
-        { icon: MessageCircle, title: "WhatsApp AI Assistant", desc: "Your scheduling intelligence on WhatsApp — where most of your customers already are. Responds, qualifies, and books directly in the chat.", plan: "Premium" },
-        { icon: RefreshCw, title: "Customer Re-engagement Automation", desc: "Automatically follows up with past customers via WhatsApp with offers and reminders that bring them back and generate fast revenue.", plan: "Premium" },
-        { icon: FileSpreadsheet, title: "Google Sheets & CRM Sync", desc: "Every lead and booking auto-organized in a clean, shareable spreadsheet. No manual entry — your pipeline is always current.", plan: "Premium" },
-        { icon: Star, title: "Google Review Booster via QR Code", desc: "A custom QR code card that turns satisfied customers into 5-star reviews with a single scan. More reviews = higher local ranking.", plan: "Essential" },
+        { icon: Bot, title: "24/7 Web Lead Capture & Scheduler", desc: "An AI assistant on your website that greets every visitor, answers their questions, and books appointments at any hour, with no one on standby.", plan: "Essential" },
+        { icon: MessageCircle, title: "WhatsApp AI Assistant", desc: "Booking that lives right inside WhatsApp, where most of your customers already are. It replies, qualifies, and books straight in the chat.", plan: "Premium" },
+        { icon: RefreshCw, title: "Customer Re-engagement Automation", desc: "Automatically follows up with past customers on WhatsApp, sending offers and reminders that get them booking again.", plan: "Premium" },
+        { icon: FileSpreadsheet, title: "Google Sheets & CRM Sync", desc: "Every lead and booking lands in a clean, shareable spreadsheet on its own. No manual entry, and your pipeline stays current.", plan: "Premium" },
+        { icon: Star, title: "Google Review Booster via QR Code", desc: "A custom QR code card that turns happy customers into 5-star reviews with a single scan. More reviews mean you rank higher locally.", plan: "Essential" },
       ],
     },
     pricing: {
@@ -57,7 +57,7 @@ const t = {
         label: "Setup & Build",
         price: "$299",
         note: "one-time fee",
-        desc: "We build everything from scratch — your website, AI agent, all integrations, and QR Code system. You go live in 5–7 days.",
+        desc: "We build everything from scratch: your website, the AI agent, every integration, and the QR code system. You go live in 5 to 7 days.",
         features: ["Custom website design & development", "AI booking agent configuration", "All automation workflows", "Google Review QR Code system", "Domain & hosting setup", "Live handoff walkthrough"],
       },
       plans: [
@@ -73,7 +73,7 @@ const t = {
           label: "Premium",
           price: "$149",
           note: "/month",
-          desc: "The full stack — WhatsApp AI, re-engagement, and CRM sync.",
+          desc: "Everything you need, including WhatsApp AI, re-engagement, and CRM sync.",
           features: ["Everything in Essential", "WhatsApp AI Assistant", "Customer re-engagement automation", "Google Sheets & CRM sync", "Priority support", "Monthly performance review"],
           highlight: true,
         },
@@ -93,8 +93,8 @@ const t = {
       label: "FAQ",
       title: "Common Questions",
       items: [
-        { q: "How long does setup take?", a: "Most clients go live within 5–7 business days after we receive your business information." },
-        { q: "Do I need to know how to code?", a: "Not at all. We build and manage everything. You receive notifications and reply to customers — that's it." },
+        { q: "How long does setup take?", a: "Most clients go live within 5 to 7 business days after we receive your business information." },
+        { q: "Do I need to know how to code?", a: "Not at all. We build and manage everything. You get the notifications and reply to customers. That's it." },
         { q: "What if I already have a website?", a: "We can add the AI agent to your existing site or build a new one from scratch. Your choice." },
         { q: "Can the AI speak Spanish or Portuguese?", a: "Yes. The AI detects the customer's language and responds in English, Spanish, or Portuguese automatically." },
         { q: "Is there a contract?", a: "No contracts. Month-to-month. Cancel anytime with 30 days notice." },
@@ -104,7 +104,7 @@ const t = {
     cta: {
       title: "Ready to Run on Autopilot?",
       sub: "Setup in under a week. Start capturing leads from day one.",
-      btn1: "Get Started — $299 Setup",
+      btn1: "Get Started for $299",
       btn2: "Message Us on WhatsApp",
     },
     footer: { rights: "© 2025 JS Tech Corp. All rights reserved.", tag: "AI systems for local service businesses." },
@@ -115,12 +115,12 @@ const t = {
       badge: "Automação com IA para Negócios Locais",
       h1: "Pare de Perder Clientes",
       h2: "por Resposta Lenta.",
-      sub: "Construímos sistemas de IA que capturam leads, agendam serviços e reativam clientes antigos — 24 horas, no piloto automático.",
+      sub: "Construímos sistemas de IA que capturam leads, agendam serviços e trazem clientes antigos de volta. Funcionam a qualquer hora, para você nunca mais perder um cliente.",
       cta1: "Começar Agora",
       cta2: "Ver Exemplo Real",
     },
     stats: [
-      { v: "40–60%", l: "dos leads perdidos por resposta lenta" },
+      { v: "40-60%", l: "dos leads perdidos por resposta lenta" },
       { v: "24/7", l: "IA trabalhando enquanto você descansa" },
       { v: "$2.000+", l: "custo mensal de uma recepcionista" },
       { v: "30 dias", l: "garantia de reembolso" },
@@ -128,19 +128,19 @@ const t = {
     problem: {
       label: "O Problema",
       title: "Cada Mensagem Ignorada é um Cliente Perdido",
-      body: "Quando alguém entra em contato e não recebe resposta em minutos, vai para o próximo negócio da lista. Você está ocupado fazendo o trabalho — não olhando o celular. Essa lacuna está custando dinheiro real todos os dias.",
+      body: "Quando alguém entra em contato e não recebe resposta em minutos, vai para o próximo negócio da lista. Você está ocupado fazendo o trabalho, não olhando o celular. Essa lacuna custa dinheiro real todos os dias.",
       highlight: "Uma recepcionista custa entre $2.000 e $3.500 por mês. Nós entregamos o mesmo resultado por uma fração disso.",
     },
     services: {
       label: "O Que Construímos",
-      title: "Cinco Sistemas. Um Objetivo: Mais Receita.",
-      sub: "Cada sistema é desenvolvido para fechar uma lacuna específica no seu negócio.",
+      title: "Cinco sistemas que transformam mensagens perdidas em serviços agendados.",
+      sub: "Cada um resolve um ponto específico onde você está perdendo negócio.",
       items: [
-        { icon: Bot, title: "Captador de Leads & Agendador Web 24/7", desc: "Um assistente de IA no seu site que conversa com cada visitante, responde perguntas e agenda serviços a qualquer hora — sem precisar de ninguém.", plan: "Essencial" },
-        { icon: MessageCircle, title: "Assistente de IA no WhatsApp", desc: "Sua inteligência de agendamento no WhatsApp — onde a maioria dos clientes já está. Responde, qualifica e agenda direto na conversa.", plan: "Premium" },
-        { icon: RefreshCw, title: "Automação de Reengajamento de Clientes", desc: "Manda mensagens automáticas para clientes antigos via WhatsApp com ofertas e lembretes que os trazem de volta e geram receita rápida.", plan: "Premium" },
-        { icon: FileSpreadsheet, title: "Sincronização com Google Sheets & CRM", desc: "Cada lead e agendamento organizado automaticamente em planilha limpa e compartilhável. Sem entrada manual — seu CRM sempre atualizado.", plan: "Premium" },
-        { icon: Star, title: "Booster de Avaliações Google via QR Code", desc: "Um cartão com QR Code personalizado que transforma clientes satisfeitos em avaliações 5 estrelas com um escaneamento. Mais avaliações = mais posição.", plan: "Essencial" },
+        { icon: Bot, title: "Captador de Leads & Agendador Web 24/7", desc: "Um assistente de IA no seu site que atende cada visitante, responde as perguntas e agenda serviços a qualquer hora, sem precisar de ninguém de plantão.", plan: "Essencial" },
+        { icon: MessageCircle, title: "Assistente de IA no WhatsApp", desc: "Agendamento dentro do próprio WhatsApp, onde a maioria dos clientes já está. Ele responde, qualifica e agenda direto na conversa.", plan: "Premium" },
+        { icon: RefreshCw, title: "Automação de Reengajamento de Clientes", desc: "Manda mensagens automáticas para clientes antigos no WhatsApp, com ofertas e lembretes que os trazem de volta para agendar de novo.", plan: "Premium" },
+        { icon: FileSpreadsheet, title: "Sincronização com Google Sheets & CRM", desc: "Cada lead e agendamento cai sozinho em uma planilha limpa e compartilhável. Sem digitação manual, e seu CRM sempre atualizado.", plan: "Premium" },
+        { icon: Star, title: "Booster de Avaliações Google via QR Code", desc: "Um cartão com QR Code personalizado que transforma clientes satisfeitos em avaliações 5 estrelas com um escaneamento. Mais avaliações significam mais posição no Google.", plan: "Essencial" },
       ],
     },
     pricing: {
@@ -151,7 +151,7 @@ const t = {
         label: "Implementação",
         price: "$299",
         note: "pagamento único",
-        desc: "Construímos tudo do zero — site, agente de IA, todas as integrações e sistema de QR Code. Você entra no ar em 5 a 7 dias.",
+        desc: "Construímos tudo do zero: o site, o agente de IA, todas as integrações e o sistema de QR Code. Você entra no ar em 5 a 7 dias.",
         features: ["Design e desenvolvimento do site", "Configuração do agente de IA", "Todos os fluxos de automação", "Sistema de QR Code para avaliações", "Configuração de domínio e hospedagem", "Apresentação ao vivo na entrega"],
       },
       plans: [
@@ -167,7 +167,7 @@ const t = {
           label: "Premium",
           price: "$149",
           note: "/mês",
-          desc: "A automação completa — IA no WhatsApp, reengajamento e CRM.",
+          desc: "Tudo o que você precisa, incluindo IA no WhatsApp, reengajamento e CRM.",
           features: ["Tudo do Plano Essencial", "Assistente de IA no WhatsApp", "Automação de reengajamento de clientes", "Sincronização com Google Sheets & CRM", "Suporte prioritário", "Revisão mensal de desempenho"],
           highlight: true,
         },
@@ -188,7 +188,7 @@ const t = {
       title: "Perguntas Frequentes",
       items: [
         { q: "Quanto tempo leva a implementação?", a: "A maioria dos clientes entra no ar em 5 a 7 dias úteis após recebermos as informações do seu negócio." },
-        { q: "Preciso saber programar?", a: "De jeito nenhum. Nós construímos e gerenciamos tudo. Você recebe as notificações e responde aos clientes — só isso." },
+        { q: "Preciso saber programar?", a: "De jeito nenhum. Nós construímos e gerenciamos tudo. Você recebe as notificações e responde aos clientes. Só isso." },
         { q: "E se eu já tiver um site?", a: "Podemos adicionar o agente de IA ao seu site atual ou construir um novo do zero. A escolha é sua." },
         { q: "A IA fala português?", a: "Sim. O agente detecta o idioma do cliente e responde em inglês, português ou espanhol automaticamente." },
         { q: "Tem contrato ou fidelidade?", a: "Sem contratos. Mês a mês. Cancele quando quiser com 30 dias de aviso." },
@@ -198,7 +198,7 @@ const t = {
     cta: {
       title: "Pronto para Operar no Piloto Automático?",
       sub: "Implementação em menos de uma semana. Captando leads desde o primeiro dia.",
-      btn1: "Começar — $299 de Implementação",
+      btn1: "Começar por $299",
       btn2: "Falar no WhatsApp",
     },
     footer: { rights: "© 2025 JS Tech Corp. Todos os direitos reservados.", tag: "Sistemas de IA para negócios locais de serviço." },
@@ -254,7 +254,7 @@ export default function Home() {
       <section className="bg-white px-5 pt-24 pb-20 text-center">
         <div className="max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue-600 bg-blue-50 rounded-full px-4 py-1.5 mb-8">
-            <Sparkles size={10} />
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
             {c.hero.badge}
           </span>
           <h1 className="text-5xl sm:text-7xl font-black text-gray-900 leading-[1.04] tracking-tight mb-6">
@@ -418,7 +418,7 @@ export default function Home() {
                 <div className="flex gap-0.5 mb-5">
                   {[...Array(5)].map((_, s) => <Star key={s} size={13} className="text-yellow-400 fill-yellow-400" />)}
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">"{item.text}"</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">&ldquo;{item.text}&rdquo;</p>
                 <div>
                   <p className="text-gray-900 font-semibold text-sm">{item.name}</p>
                   <p className="text-gray-400 text-xs mt-0.5">{item.co}</p>
