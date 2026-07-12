@@ -74,6 +74,14 @@ export default function ChatWidget() {
     setIsLoading(true);
     textareaRef.current?.focus();
 
+    const startedAt = Date.now();
+    // Keep the "typing…" bubble visible for a natural amount of time so the
+    // assistant feels like a real person writing, not an instant machine.
+    const settle = async (ms: number) => {
+      const remaining = ms - (Date.now() - startedAt);
+      if (remaining > 0) await new Promise((r) => setTimeout(r, remaining));
+    };
+
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
@@ -84,11 +92,12 @@ export default function ChatWidget() {
       if (!response.ok) throw new Error("API error");
 
       const data = (await response.json()) as { reply?: string };
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: data.reply ?? "Sorry, something went wrong." },
-      ]);
+      const reply = data.reply ?? "Sorry, something went wrong.";
+      const typingMs = Math.min(3000, Math.max(1000, reply.length * 18));
+      await settle(typingMs);
+      setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
     } catch {
+      await settle(1000);
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: "Sorry, I'm having trouble connecting. Please try again." },
