@@ -41,3 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# ferramentas locais de publicacao (nao fazem parte do site)
+/publicar.ps1
+/Publicar site.bat

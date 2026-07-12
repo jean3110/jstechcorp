@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "& \".claude/check-publish.ps1\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
