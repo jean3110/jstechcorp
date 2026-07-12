@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Archivo, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import ChatWidget from "./ChatWidget";
 
-const inter = Inter({ subsets: ["latin"] });
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-archivo",
+  weight: ["600", "700", "800", "900"],
+  display: "swap",
+});
+const ibmMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-ibm-mono",
+  weight: ["400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "JS Tech Corp — AI Systems for Local Businesses",
-  description: "We build AI-powered booking systems, professional websites, and Google review automation for local service businesses. Starting at $299.",
+  description:
+    "The call you miss is the customer your competitor keeps. We build an AI that answers, quotes, and books your customers 24/7. Live in 5–7 days, from $299.",
   icons: {
     icon: "/favicon.svg",
     apple: "/logo-icon.svg",
@@ -29,7 +37,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${inter.className} ${spaceGrotesk.variable} min-h-full antialiased`}>
+      <body className={`${inter.variable} ${archivo.variable} ${ibmMono.variable} min-h-full antialiased`}>
         {children}
         <ChatWidget />
       </body>
