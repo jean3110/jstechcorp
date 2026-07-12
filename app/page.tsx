@@ -1,8 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Check, Bot, Star, ArrowRight, MessageCircle, RefreshCw, FileSpreadsheet, ChevronDown, Shield } from "lucide-react";
-
-type Lang = "en" | "pt";
+import { useLang, type Lang } from "./LangContext";
 
 const CONTACT_EMAIL = "contact@jstechcorp.com";
 const WA_BASE = "https://wa.me/19785028075";
@@ -197,7 +196,7 @@ function Btn({ href, children, variant = "amber", className = "" }: {
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 export default function Home() {
-  const [lang, setLang] = useState<Lang>("en");
+  const { lang, setLang } = useLang();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const c = t[lang];
 
@@ -218,7 +217,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-3">
             <button
-              onClick={() => setLang((l) => (l === "en" ? "pt" : "en"))}
+              onClick={() => setLang(lang === "en" ? "pt" : "en")}
               className="text-xs font-bold text-[#59636f] hover:text-[#12181f] border border-[#e6e4dd] hover:border-[#12181f] rounded-[3px] px-3 py-1.5 transition-all font-[family-name:var(--font-ibm-mono)]"
             >
               {lang === "en" ? "PT" : "EN"}

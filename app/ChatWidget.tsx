@@ -2,11 +2,34 @@
 
 import { useState, useRef, useEffect, FormEvent } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
+import { useLang, type Lang } from "./LangContext";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
 }
+
+const UI: Record<Lang, {
+  greeting: string; assistant: string; online: string; placeholder: string;
+  sorryWrong: string; sorryConn: string;
+}> = {
+  en: {
+    greeting: "Hi! I'm the JS Tech Corp assistant. Ask me about our AI systems, pricing, or how we can help your business capture more leads 24/7.",
+    assistant: "AI Sales Assistant",
+    online: "Online",
+    placeholder: "Type your message...",
+    sorryWrong: "Sorry, something went wrong.",
+    sorryConn: "Sorry, I'm having trouble connecting. Please try again.",
+  },
+  pt: {
+    greeting: "Oi! Sou o assistente da JS Tech Corp. Pode me perguntar sobre nossos sistemas de IA, preços, ou como a gente ajuda seu negócio a captar mais clientes 24/7.",
+    assistant: "Assistente de Vendas IA",
+    online: "Online",
+    placeholder: "Escreva sua mensagem...",
+    sorryWrong: "Desculpe, algo deu errado.",
+    sorryConn: "Desculpe, estou com problema de conexão. Tente de novo.",
+  },
+};
 
 function TypingIndicator() {
   return (
@@ -44,13 +67,11 @@ function MessageBubble({ message }: { message: Message }) {
 }
 
 export default function ChatWidget() {
+  const { lang } = useLang();
   const [open, setOpen] = useState(false);
   const [sessionId] = useState<string>(() => crypto.randomUUID());
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content: "Hi! I'm the JS Tech Corp assistant. Ask me about our AI systems, pricing, or how we can help your business capture more leads 24/7.",
-    },
+  const [messages, setMessages] = useState<Message[]>(() => [
+    { role: "assistant", content: UI[lang].greeting },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -63,6 +84,15 @@ export default function ChatWidget() {
       textareaRef.current?.focus();
     }
   }, [messages, isLoading, open]);
+
+  // Keep the greeting in the page's language until the user starts chatting.
+  useEffect(() => {
+    setMessages((prev) =>
+      prev.length === 1 && prev[0].role === "assistant"
+        ? [{ role: "assistant", content: UI[lang].greeting }]
+        : prev
+    );
+  }, [lang]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -92,7 +122,7 @@ export default function ChatWidget() {
       if (!response.ok) throw new Error("API error");
 
       const data = (await response.json()) as { reply?: string };
-      const reply = data.reply ?? "Sorry, something went wrong.";
+      const reply = data.reply ?? UI[lang].sorryWrong;
       const typingMs = Math.min(3000, Math.max(1000, reply.length * 18));
       await settle(typingMs);
       setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
@@ -100,7 +130,7 @@ export default function ChatWidget() {
       await settle(1000);
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: "Sorry, I'm having trouble connecting. Please try again." },
+        { role: "assistant", content: UI[lang].sorryConn },
       ]);
     } finally {
       setIsLoading(false);
@@ -127,10 +157,10 @@ export default function ChatWidget() {
                 <span className="text-white font-semibold text-sm">JS Tech Corp</span>
                 <span className="flex items-center gap-1 text-xs text-emerald-200">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 inline-block animate-pulse" />
-                  Online
+                  {UI[lang].online}
                 </span>
               </div>
-              <p className="text-xs text-white/70">AI Sales Assistant</p>
+              <p className="text-xs text-white/70">{UI[lang].assistant}</p>
             </div>
             <button onClick={() => setOpen(false)} className="text-white/70 hover:text-white transition-colors" aria-label="Close chat">
               <X size={18} />
@@ -154,7 +184,7 @@ export default function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Type your message..."
+                placeholder={UI[lang].placeholder}
                 rows={1}
                 disabled={isLoading}
                 className="flex-1 resize-none rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#4A6CF7] focus:border-transparent disabled:opacity-50 max-h-24 overflow-y-auto leading-relaxed"

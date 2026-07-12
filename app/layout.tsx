@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Archivo, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import ChatWidget from "./ChatWidget";
+import { LangProvider } from "./LangContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const archivo = Archivo({
@@ -38,8 +39,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="h-full">
       <body className={`${inter.variable} ${archivo.variable} ${ibmMono.variable} min-h-full antialiased`}>
-        {children}
-        <ChatWidget />
+        <LangProvider>
+          {children}
+          <ChatWidget />
+        </LangProvider>
       </body>
     </html>
   );
