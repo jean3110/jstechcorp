@@ -80,15 +80,6 @@ const t = {
       ],
       guarantee: "If the AI agent doesn't capture a single lead in the first 30 days, we refund your full setup fee. No questions asked.",
     },
-    testimonials: {
-      label: "Real Results",
-      title: "Already Working for Local Businesses",
-      items: [
-        { name: "Victor N.", co: "VN Detailing · Leominster, MA", text: "The AI books while I'm under a car. I get the notification and just show up. Best investment I've made for the business." },
-        { name: "Sarah M.", co: "House Cleaning · Worcester, MA", text: "I used to lose customers on weekends when I couldn't answer. Now the AI handles everything and sends me a summary every morning." },
-        { name: "Mike T.", co: "Landscaping · Fitchburg, MA", text: "My Google reviews went from 8 to 34 in two months. The QR code system is so simple but it actually works." },
-      ],
-    },
     faq: {
       label: "FAQ",
       title: "Common Questions",
@@ -107,7 +98,7 @@ const t = {
       btn1: "Get Started for $299",
       btn2: "Message Us on WhatsApp",
     },
-    footer: { rights: "© 2025 JS Tech Corp. All rights reserved.", tag: "AI systems for local service businesses." },
+    footer: { rights: "© 2026 JS Tech Corp. All rights reserved.", tag: "AI systems for local service businesses." },
   },
   pt: {
     nav: { services: "Soluções", pricing: "Preços", contact: "Contato", cta: "Começar" },
@@ -174,15 +165,6 @@ const t = {
       ],
       guarantee: "Se o agente de IA não capturar nenhum lead nos primeiros 30 dias, devolvemos integralmente a taxa de implementação. Sem burocracia.",
     },
-    testimonials: {
-      label: "Resultados Reais",
-      title: "Já Funcionando em Negócios Locais",
-      items: [
-        { name: "Victor N.", co: "VN Detailing · Leominster, MA", text: "A IA agenda enquanto estou embaixo do carro. Recebo a notificação e só apareço. Melhor investimento que fiz para o negócio." },
-        { name: "Sarah M.", co: "Limpeza Residencial · Worcester, MA", text: "Antes perdia clientes nos fins de semana quando não conseguia responder. Agora a IA cuida de tudo e me manda um resumo toda manhã." },
-        { name: "Mike T.", co: "Paisagismo · Fitchburg, MA", text: "Minhas avaliações no Google foram de 8 para 34 em dois meses. O sistema de QR Code é simples mas funciona de verdade." },
-      ],
-    },
     faq: {
       label: "Dúvidas",
       title: "Perguntas Frequentes",
@@ -201,7 +183,7 @@ const t = {
       btn1: "Começar por $299",
       btn2: "Falar no WhatsApp",
     },
-    footer: { rights: "© 2025 JS Tech Corp. Todos os direitos reservados.", tag: "Sistemas de IA para negócios locais de serviço." },
+    footer: { rights: "© 2026 JS Tech Corp. Todos os direitos reservados.", tag: "Sistemas de IA para negócios locais de serviço." },
   },
 };
 
@@ -401,30 +383,6 @@ export default function Home() {
               </p>
               <p className="text-sm text-emerald-700/70 leading-relaxed">{c.pricing.guarantee}</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── TESTIMONIALS ── */}
-      <section className="bg-gray-50 px-5 py-24 border-t border-gray-100">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-5">{c.testimonials.label}</p>
-            <h2 className="text-3xl sm:text-5xl font-black text-gray-900">{c.testimonials.title}</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-4">
-            {c.testimonials.items.map((item, i) => (
-              <div key={i} className="bg-white border border-gray-100 rounded-2xl p-7">
-                <div className="flex gap-0.5 mb-5">
-                  {[...Array(5)].map((_, s) => <Star key={s} size={13} className="text-yellow-400 fill-yellow-400" />)}
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">&ldquo;{item.text}&rdquo;</p>
-                <div>
-                  <p className="text-gray-900 font-semibold text-sm">{item.name}</p>
-                  <p className="text-gray-400 text-xs mt-0.5">{item.co}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
